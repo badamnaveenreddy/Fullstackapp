@@ -13,16 +13,17 @@ public class Project {
     private String description;
     private String imageUrl;
 
-    public Project() {}
-
-    public Project(String name, String description, String imageUrl) {
-        this.name = name;
-        this.description = description;
-        this.imageUrl = imageUrl;
+    // No-args constructor (VERY IMPORTANT)
+    public Project() {
     }
 
+    // Getters and Setters
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
