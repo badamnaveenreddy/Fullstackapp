@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Projects</title>
+</head>
+<body>
+
+<h2>Our Projects</h2>
+<div id="projects"></div>
+
+<script>
+fetch("http://localhost:9065/api/projects")
+  .then(res => res.json())
+  .then(data => {
+    let div = document.getElementById("projects");
+    data.forEach(p => {
+      div.innerHTML += `
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+        <img src="${p.imageUrl}" width="200"><hr>
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>
